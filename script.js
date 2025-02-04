@@ -31,7 +31,6 @@ async function renderElements() {
 
 
 renderElements();
-
 async function loadHoldings() {
     const response = await fetch('/db/usersdb.json');
     const data = await response.json();
@@ -48,10 +47,11 @@ async function loadHoldings() {
     const holdingsDiv = document.getElementById('holdings');
     holdingsDiv.innerHTML = '';
 
-    users.forEach(({ user, materials }) => {
+    users.forEach(({ user, materials }, index) => {
         const table = document.createElement('table');
-        table.classList.add("userdbtable")
-        table.innerHTML = `<caption>${user}</caption><tr><th>Material</th><th>Amount (grams)</th></tr>` +
+        table.classList.add("userdbtable");
+        table.innerHTML = `<caption>${user} <small>#${index + 1}</small></caption>
+            <tr><th>Material</th><th>Amount (grams)</th></tr>` +
             Object.entries(materials).map(([material, amount]) =>
                 `<tr><td>${material}</td><td>${amount}</td></tr>`
             ).join('');
