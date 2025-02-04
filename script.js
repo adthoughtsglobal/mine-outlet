@@ -32,7 +32,7 @@ async function renderElements() {
 
 renderElements();
 async function loadHoldings() {
-    const response = await fetch('/db/usersdb.json');
+    const response = await fetch('db/usersdb.json');
     const data = await response.json();
     delete data.info;
 
