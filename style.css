@@ -1,0 +1,102 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #101010;
+    color: white;
+    padding: 1rem;
+    height: calc(100% - 2rem);
+    width: calc(100% - 2rem);
+}
+
+#pricing {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.element {
+    background: #1f1f1f;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.element h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.element p {
+    margin: 0;
+    opacity: 0.5;
+    font-size: 1rem;
+}
+
+.element .buybtn {
+    background-color: #141414;
+    color: white;
+    padding: 0.5rem;
+    border: 0;
+    border-radius: 0.5rem;
+}
+
+div#holdings {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.userdbtable {
+    background: #1f1f1f;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+tbody {
+    background-color: #2f2f2f;
+    border-radius: 0.5rem;
+    color: white;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 0.5rem;
+}
+
+th {
+    background-color: #3a3a3a;
+}
+
+td {
+    background-color: #404040;
+}
+
+.twosided {
+    display: flex
+;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.sideone {
+    flex: 1;
+}

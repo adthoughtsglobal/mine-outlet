@@ -1,0 +1,42 @@
+{
+    "Pure Coal (Anthracite)": {
+        "unit": "r/g",
+        "value": 0.004
+    },
+    "Coal (Lignite)": {
+        "unit": "r/g",
+        "value": 0.001
+    },
+    "Treated Plutonium": {
+        "unit": "r/g",
+        "value": 12
+    },
+    "Protected Covering": {
+        "unit": "r",
+        "value": 2
+    },
+    "Pure Tungsten": {
+        "unit": "r/g",
+        "value": 10
+    },
+    "Gold-24C": {
+        "unit": "r/g",
+        "value": 4
+    },
+    "Shaped Diamond Crystals": {
+        "unit": "r/g",
+        "value": 20
+    },
+    "Antimatter": {
+        "unit": "r/g",
+        "value": 30000
+    },
+    "Magnetic Storage Container": {
+        "unit": "r/day",
+        "value": 5
+    },
+    "Neodymium": {
+        "unit": "r/g",
+        "value": 10
+    }
+}
