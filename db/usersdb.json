@@ -4,6 +4,10 @@
         "Shaped Diamond Crystals": 0.05
     },
     "allucat1000":{
-        "Pure Tungsten": 0.1
+        "Pure Tungsten": 0.1,
+        "Antimatter":0.00033333333
+    },
+    "rattusdongislong":{
+        "Pure Tungsten": 5
     }
 }
