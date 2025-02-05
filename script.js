@@ -7,12 +7,12 @@ function renderCodeToCanvas(codeString, canvasElement) {
     };
     const size = 12;
     const pixelSizeX = Math.floor(canvasElement.width / size);
-const pixelSizeY = Math.floor(canvasElement.height / size);
+    const pixelSizeY = Math.floor(canvasElement.height / size);
 
 
     for (let y = 0; y < size; y++) {
         for (let x = 0; x < size; x++) {
-            const index = y * size  + x;
+            const index = y * size + x;
             if (index < codeString.length) {
                 ctx.fillStyle = colors[codeString[index]] || "#000000";
                 ctx.fillRect(x * pixelSizeX, y * pixelSizeY, pixelSizeX, pixelSizeY);
@@ -45,10 +45,10 @@ async function renderElements() {
 }
 let priceMode = "r/g";
 
-    document.getElementById("pricemodedrop").addEventListener("change", (event) => {
-        priceMode = event.target.value;
-        renderElements();
-    });
+document.getElementById("pricemodedrop").addEventListener("change", (event) => {
+    priceMode = event.target.value;
+    renderElements();
+});
 
 function createElementDiv(name, data) {
     const elementDiv = document.createElement("div");
@@ -66,15 +66,7 @@ function createElementDiv(name, data) {
 
     const button = document.createElement("button");
     button.className = "buybtn";
-// Handling price display in reverse (r/g to g/r)
-if (priceMode === "r/g") {
-    // Convert from r/g to g/r (reciprocal of the value)
-    const reversedValue = (1 / data.value).toFixed(5);
-    button.textContent = `${reversedValue} g/r`;
-} else {
     button.textContent = `${data.value} r/g`;
-}
-
     const funnyDescriptions = [
         `${name}: Only ${data.value} ${data.unit} away from making your day a little more interesting!`,
         `Need something new? ${name} is here, and it's yours for just ${data.value} ${data.unit}.`,

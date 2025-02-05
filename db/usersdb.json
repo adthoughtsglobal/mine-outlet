@@ -5,12 +5,13 @@
     },
     "allucat1000":{
         "Pure Tungsten": 0.1,
-        "Antimatter":0.00033333333
+        "Antimatter":0.00033333
     },
     "rattusdongislong":{
         "Pure Tungsten": 5
     },
     "JJT":{
-        "Antimatter":0.00016667
+        "Antimatter":0.00013333,
+        "Coal (Lignite)":1000
     }
 }
