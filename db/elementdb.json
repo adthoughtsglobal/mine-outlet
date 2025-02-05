@@ -1,42 +1,47 @@
 {
     "Pure Coal (Anthracite)": {
         "unit": "r/g",
-        "value": 0.004
+        "value": 0.004,
+        "img":"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhmmhhhhhhhhhmmllhhhhhhhmmmlllhhhhhmmmmllllhhhhmmmlllllhhhhhllllllhhhhhhhhhhhhhhhhhhhhhhhhhhh"
     },
     "Coal (Lignite)": {
         "unit": "r/g",
-        "value": 0.001
+        "value": 0.001,
+        "img":"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhmmhhhhhhhhhmmmlhhhhhhhmmmmllhhhhhmmmmmmllhhhhmmmmmmllhhhhhmmmmllhhhhhhhhhhhhhhhhhhhhhhhhhhh"
     },
     "Treated Plutonium": {
         "unit": "r/g",
-        "value": 12
-    },
-    "Protected Covering": {
-        "unit": "r",
-        "value": 2
+        "value": 12,
+        "img":"hhhhhhhhhhhhhhhhhhhhhhhhhhllhhhhllhhhhhlhiihlhhhhhhlibbilhhhhhhlbbbblhhhhhhlbibblhhhhhhlbbbilhhhhhhlibbblhhhhhhllllllhhhhhhhhhhhhhhhhhhhhhhhhhhh"
     },
     "Pure Tungsten": {
         "unit": "r/g",
-        "value": 10
+        "value": 10,
+        "img":"hhhhhhhhhhhhhhhhmmhhhhhhhhhmmhmhhhhhhhmmhhhmmhhhhhlmmhhhhmhhhhlllmmhhmmhhhllllmmmmmhhhllllllmmmhhhhhllllmmhhhhhhhlllmhhhhhhhhhhlhhhhhhhhhhhhhhhh"
+    },
+    "Pure Bismuth": {
+        "unit": "r/g",
+        "value": 6,
+        "img":"hhhhhhhhhhhhhhmhhhmhhhhhhhmmhhmahhhhhhmlibmaihhhhmmaibgkijhhhmmacbgkijhhhlmacigkmjhhhhlmcigmmmmhhhllmimmlllhhhhlllllllhhhhhhhhhhhhhhhhhhhhhhhhhh"
     },
     "Gold-24C": {
         "unit": "r/g",
-        "value": 4
+        "value": 4,
+        "img":"llllllllllllllllllllllllllllllllllllllddddllllllllgdhhdlllllllggdhhddllllllggdddddllllllggdddglllllllggdggllllllllgggllllllllllgllllllllllllllll"
     },
     "Shaped Diamond Crystals": {
         "unit": "r/g",
-        "value": 20
+        "value": 20,
+        "img":"lllllllllllllllkkkkkklllllkhhffffkllllkkkkkkkklllllkfkfkfllllllkfkfkflllllllkfkfllllllllkfkflllllllllkkllllllllllkklllllllllllllllllllllllllllll"
     },
     "Antimatter": {
         "unit": "r/g",
-        "value": 30000
-    },
-    "Magnetic Storage Container": {
-        "unit": "r/day",
-        "value": 5
+        "value": 30000,
+        "img":"llffkkllkkllkkkkjjkllkflkllcljfkjkfllllafffjjkllllkjjhfaallllkajhhhaccllfkalchhjlllkfkaccafjjjkkffalkaafkkkllflalkklfflllkklllllllllllkkllllllll"
     },
     "Neodymium": {
         "unit": "r/g",
-        "value": 10
+        "value": 10,
+        "img":"llllllllllllllllllllllllllllmmmhhllllllmmhmmhhlllllmhhlmhhlllllmhhlmhhlllllmhhlmhhlllllmhhlmhhlllllmmhmmhhllllllmmmhhlllllllllllllllllllllllllll"
     }
 }

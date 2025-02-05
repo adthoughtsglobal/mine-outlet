@@ -1,3 +1,25 @@
+function renderCodeToCanvas(codeString, canvasElement) {
+    const ctx = canvasElement.getContext("2d");
+    const colors = {
+        "a": "#FF0000", "b": "#00FF00", "c": "#0000ff", "d": "#FFFF00",
+        "e": "#FF00FF", "f": "#00FFFF", "g": "#800000", "h": "#ffffff",
+        "i": "#008000", "j": "#b700ffff", "k": "#008080", "l": "#000000", "m": "#6b6b6b"
+    };
+    const size = 12;
+    const pixelSizeX = Math.floor(canvasElement.width / size);
+const pixelSizeY = Math.floor(canvasElement.height / size);
+
+
+    for (let y = 0; y < size; y++) {
+        for (let x = 0; x < size; x++) {
+            const index = y * size  + x;
+            if (index < codeString.length) {
+                ctx.fillStyle = colors[codeString[index]] || "#000000";
+                ctx.fillRect(x * pixelSizeX, y * pixelSizeY, pixelSizeX, pixelSizeY);
+            }
+        }
+    }
+}
 
 async function renderElements() {
     var response = await fetch("db/elementdb.json");
@@ -10,6 +32,10 @@ async function renderElements() {
     Object.entries(pricingData).forEach(([name, data]) => {
         const elementDiv = document.createElement("div");
         elementDiv.className = "element";
+
+        const imgdiv = document.createElement("canvas");
+        imgdiv.classList.add("elementImage");
+        renderCodeToCanvas(data.img || "ababababababbabababababaababababababbabababababaababababababbabababababaababababababbabababababaababababababbabababababaababababababbabababababa", imgdiv);
 
         const title = document.createElement("h1");
         title.className = "elementname";
@@ -36,6 +62,7 @@ async function renderElements() {
 
         description.textContent = funnyDescriptions[Math.floor(Math.random() * funnyDescriptions.length)];
 
+        elementDiv.appendChild(imgdiv);
         elementDiv.appendChild(title);
         elementDiv.appendChild(description);
         elementDiv.appendChild(button);

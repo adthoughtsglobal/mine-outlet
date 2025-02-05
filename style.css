@@ -41,6 +41,12 @@ body {
     font-size: 1rem;
 }
 
+canvas.elementImage {
+    height: 190px;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    image-rendering: pixelated;
+}
 .element .buybtn {
     background-color: #141414;
     font-size: 1.5rem;

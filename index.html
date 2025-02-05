@@ -22,18 +22,73 @@
     <div class="maincontainer">
         <div class="title">
             <h1>Mine Outlet</h1>
-            <p>The <b>purest</b> and <b>best</b> of element wholesale across rotur.</p>
+            <p>The <b>purest</b> and <b>best</b> of item wholesale across rotur.</p>
         </div>
         <div class="twosided">
             <div class="sideone side">
                 <h2>Pricing <button class="buybtnori" onclick="window.open('https\://discord.com/channels/1147362734300725298/1336342750353686528')">Buy</button></h2>
-                <div id="pricing">
-                    <div class="element">
-                        <h1 class="elementname">Pure element</h1>
-                        <p>Pure element mined in our mine.</p>
-                        <button class="buybtn">Buy</button>
+                <div class="tabs">
+                    <button class="tablinks active" onclick="openTab(event, 'Ores')">Elements</button>
+                    <button class="tablinks" onclick="openTab(event, 'Items')">Items</button>
+                </div>
+                
+                <div id="Ores" class="tabcontent">
+                    <div id="pricing">
+                        <div class="element">
+                            <h1 class="elementname">Pure element</h1>
+                            <p>Pure element mined in our mine.</p>
+                            <button class="buybtn">Buy</button>
+                        </div>
                     </div>
                 </div>
+                
+                <div id="Items" class="tabcontent">
+                    <div id="pricing">
+                        <div class="element">
+                            <h1 class="elementname">Pure element</h1>
+                            <p>Pure element mined in our mine.</p>
+                            <button class="buybtn">Buy</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <style>
+                    .tabcontent {
+                        display: none;
+                    }
+                    
+                    .tablinks {
+                        padding: 10px 20px;
+                        cursor: pointer;
+                        background-color: #383838;
+                        border: none;
+                        margin-bottom: 0.5rem;
+                        color: white;
+                    }
+                    .tablinks:hover {
+                        background-color: #1a1a1a;
+                    }
+                    .tablinks.active {
+                        background-color: #1a1a1a;
+                    }
+                </style>
+                
+                <script>
+                    function openTab(evt, tabName) {
+                        var i, tabcontent, tablinks;
+                        tabcontent = document.getElementsByClassName("tabcontent");
+                        for (i = 0; i < tabcontent.length; i++) {
+                            tabcontent[i].style.display = "none";
+                        }
+                        tablinks = document.getElementsByClassName("tablinks");
+                        for (i = 0; i < tablinks.length; i++) {
+                            tablinks[i].className = tablinks[i].className.replace(" active", "");
+                        }
+                        document.getElementById(tabName).style.display = "block";
+                        evt.currentTarget.className += " active";
+                    }
+                    document.getElementById("Ores").style.display = "block";
+                </script>
             </div>
             <div class="sidetwo side">
                 <h2>Holdings</h2>
