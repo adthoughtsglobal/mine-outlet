@@ -28,6 +28,7 @@ body {
     align-items: stretch;
     justify-content: space-between;
     gap: 0.5rem;
+    max-width: 270px;
 }
 
 .element h1 {

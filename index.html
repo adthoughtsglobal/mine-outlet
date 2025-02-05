@@ -29,7 +29,11 @@
                 <h2>Pricing <button class="buybtnori" onclick="window.open('https\://discord.com/channels/1147362734300725298/1336342750353686528')">Buy</button></h2>
                 <div class="tabs">
                     <button class="tablinks active" onclick="openTab(event, 'Ores')">Elements</button>
-                    <button class="tablinks" onclick="openTab(event, 'Items')">Items</button>
+                    <button class="tablinks" onclick="openTab(event, 'Items'); renderItemsDb()">Items</button>
+                    <select id="pricemodedrop">
+                        <option value="r/g">Rotur per Gram (r/g)</option>
+                        <option value="g/r">Gram per Rotur (g/r)</option>
+                    </select>
                 </div>
                 
                 <div id="Ores" class="tabcontent">
@@ -43,7 +47,7 @@
                 </div>
                 
                 <div id="Items" class="tabcontent">
-                    <div id="pricing">
+                    <div id="itempricing">
                         <div class="element">
                             <h1 class="elementname">Pure element</h1>
                             <p>Pure element mined in our mine.</p>

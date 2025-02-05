@@ -20,55 +20,85 @@ const pixelSizeY = Math.floor(canvasElement.height / size);
         }
     }
 }
+async function renderItemsDb() {
+    var response = await fetch("db/itemdb.json");
+    var itemsData = await response.json();
+
+    const itemsContainer = document.getElementById("Items");
+    itemsContainer.innerHTML = "";
+
+    Object.entries(itemsData).forEach(([name, data]) => {
+        itemsContainer.appendChild(createElementDiv(name, data));
+    });
+}
 
 async function renderElements() {
     var response = await fetch("db/elementdb.json");
     var pricingData = await response.json();
 
-
     const pricingContainer = document.getElementById("pricing");
     pricingContainer.innerHTML = "";
 
     Object.entries(pricingData).forEach(([name, data]) => {
-        const elementDiv = document.createElement("div");
-        elementDiv.className = "element";
-
-        const imgdiv = document.createElement("canvas");
-        imgdiv.classList.add("elementImage");
-        renderCodeToCanvas(data.img || "ababababababbabababababaababababababbabababababaababababababbabababababaababababababbabababababaababababababbabababababaababababababbabababababa", imgdiv);
-
-        const title = document.createElement("h1");
-        title.className = "elementname";
-        title.textContent = name;
-
-        const description = document.createElement("p");
-
-        const button = document.createElement("button");
-        button.className = "buybtn";
-        button.textContent = `${data.value} ${data.unit}`;
-
-        const funnyDescriptions = [
-            `${name}: Only ${data.value} ${data.unit} away from making your day a little more interesting!`,
-            `Need something new? ${name} is here, and it's yours for just ${data.value} ${data.unit}.`,
-            `Get your hands on ${name} today! It’s just ${data.value} ${data.unit} away from being yours.`,
-            `Who needs regular stuff when you can own ${name} for only ${data.value} ${data.unit}?`,
-            `${name}: Because regular elements are so last season. Only ${data.value} ${data.unit}.`,
-            `Add a little spark to your collection with ${name}. It's only ${data.value} ${data.unit}.`,
-            `Your life could use some ${name}. For just ${data.value} ${data.unit}, it's all yours!`,
-            `Don’t wait! ${name} is just ${data.value} ${data.unit} away from being in your hands.`,
-            `Want to spice things up? ${name} is yours for ${data.value} ${data.unit}. You know you want it.`,
-            `Take home ${name} today! It’s an investment in mystery, chaos, or maybe just fun, for ${data.value} ${data.unit}.`
-        ];
-
-        description.textContent = funnyDescriptions[Math.floor(Math.random() * funnyDescriptions.length)];
-
-        elementDiv.appendChild(imgdiv);
-        elementDiv.appendChild(title);
-        elementDiv.appendChild(description);
-        elementDiv.appendChild(button);
-        pricingContainer.appendChild(elementDiv);
+        pricingContainer.appendChild(createElementDiv(name, data));
     });
 }
+let priceMode = "r/g";
+
+    document.getElementById("pricemodedrop").addEventListener("change", (event) => {
+        priceMode = event.target.value;
+        renderElements();
+    });
+
+function createElementDiv(name, data) {
+    const elementDiv = document.createElement("div");
+    elementDiv.className = "element";
+
+    const imgdiv = document.createElement("canvas");
+    imgdiv.classList.add("elementImage");
+    renderCodeToCanvas(data.img || "ababababababbabababababaababababababbabababababaababababababbabababababaababababababbabababababaababababababbabababababaababababababbabababababa", imgdiv);
+
+    const title = document.createElement("h1");
+    title.className = "elementname";
+    title.textContent = name;
+
+    const description = document.createElement("p");
+
+    const button = document.createElement("button");
+    button.className = "buybtn";
+// Handling price display in reverse (r/g to g/r)
+if (priceMode === "r/g") {
+    // Convert from r/g to g/r (reciprocal of the value)
+    const reversedValue = (1 / data.value).toFixed(5);
+    button.textContent = `${reversedValue} g/r`;
+} else {
+    button.textContent = `${data.value} r/g`;
+}
+
+    const funnyDescriptions = [
+        `${name}: Only ${data.value} ${data.unit} away from making your day a little more interesting!`,
+        `Need something new? ${name} is here, and it's yours for just ${data.value} ${data.unit}.`,
+        `Get your hands on ${name} today! It’s just ${data.value} ${data.unit} away from being yours.`,
+        `Who needs regular stuff when you can own ${name} for only ${data.value} ${data.unit}?`,
+        `${name}: Because regular elements are so last season. Only ${data.value} ${data.unit}.`,
+        `Add a little spark to your collection with ${name}. It's only ${data.value} ${data.unit}.`,
+        `Your life could use some ${name}. For just ${data.value} ${data.unit}, it's all yours!`,
+        `Don’t wait! ${name} is just ${data.value} ${data.unit} away from being in your hands.`,
+        `Want to spice things up? ${name} is yours for ${data.value} ${data.unit}. You know you want it.`,
+        `Take home ${name} today! It’s an investment in mystery, chaos, or maybe just fun, for ${data.value} ${data.unit}.`
+    ];
+
+    description.textContent = funnyDescriptions[Math.floor(Math.random() * funnyDescriptions.length)];
+
+    elementDiv.appendChild(imgdiv);
+    elementDiv.appendChild(title);
+    elementDiv.appendChild(description);
+    elementDiv.appendChild(button);
+
+    return elementDiv;
+}
+
+
 
 
 renderElements();
